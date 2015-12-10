@@ -23,6 +23,7 @@
 
   <div class="weather" ng-if="vm.show">
     <h1>Location: {{vm.weather.data.name}}</h1>
+    <img src="http://www.geonames.org/flags/x/{{vm.countryCode | lowercase}}.gif" alt="">
     <h2>Current temperature:
       <span id="temperature">
         {{vm.weather.data.main.temp_max}}
@@ -37,7 +38,7 @@
 </body>
 
 
-
+<script src="bower_components/lodash/lodash.min.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>

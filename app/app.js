@@ -26,8 +26,11 @@ angular.module('App', [])
       })
       .then(function(result) {
         console.log(result)
+        // get the code from the city 
+        self.countryCode = result.data.sys.country;
         self.weather = result
         self.show = true
+
         this.weatherData = result.data.weather[0].main
 
         console.log(self.name)
@@ -39,6 +42,7 @@ angular.module('App', [])
           }
       })
       //this.getCountry = function() {
+      //Take this stuff out \/\/\/
         this.countryCode;
         var r = {
           callback: 'JSON_CALLBACK'
@@ -50,7 +54,11 @@ angular.module('App', [])
         })
         .then(function(data) {
             console.log(data)
-            //
+            _.find(countries, function(country){
+              if(country.countryCode === self.cityId){
+                console.log('Yes')
+              }
+            })
             // angular.forEach(countries, function(country, index) {
             //   if (self.city === country) {
             //     console.log('yes')
@@ -58,7 +66,7 @@ angular.module('App', [])
             //     console.log(self.countryCode)
             //   }
             // })
-            //
+
             var country = data.data.geonames[0].countryName
             var cCode = data.data.geonames[0].countryCode
             if (self.city === country) {
