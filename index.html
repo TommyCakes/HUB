@@ -4,34 +4,95 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="app/assets/stylesheets/styles.css">
-  <title>Testing!</title>
+  <title>The HUB</title>
+
 </head>
 
 <body ng-app="App" ng-controller="WeatherCtrl as vm">
-  <h2 class="logo">-HUB-</h2>
-  <div id="main">
-    <h1 class="welcome">
-      Good evening Jeffery!
-    </h1>
-    <h1 id="country">
-      <img id="flag" src="http://www.geonames.org/flags/x/{{vm.countryCode | lowercase}}.gif" /></h1>
-    <input type="text" placeholder="Name of City" ng-model="vm.city">
-    <br>
-    <button class="btn btn-info" ng-click="vm.getWeather()">
-    Get Weather!</button>
+  <div class="header">
+    <h3>{{vm.clock | date: 'mediumTime'}}</h3>
+      <div class="row">
+
+        <div class="col-xs-4 pull-right">
+          Settings
+        </div>
+        <div class="col-xs-4 pull-right">
+          Profile
+        </div>
+      </div>
+  </div>
+  <div class="welcome">
+    <h2>
+      Good Morning user!
+    </h2>
+    <h3>{{vm.date | date: 'fullDate'}}</h3>
+      <hr>
   </div>
 
+
+  <!-- <p>Latitude: {{vm.myPosition.coords.latitude}}</p>
+  <p>Longtitude: {{vm.myPosition.coords.longitude}}</p> -->
+    <!-- <input type="text" placeholder="Name of City" ng-model="vm.city">
+    <br> -->
+<div class="container">
+  <!-- <button class="btn btn-info" ng-click="vm.getWeather()">
+  Get Weather!</button> -->
+
+<div class="row">
+  <div class="col-sm-4 pull-left col-xs-12">
+    <div class="weather">
+        <h3>Today's Weather</h3>
+        <hr>
+        <h2>
+          <skycon icon="vm.weatherIcon">
+          </skycon>
+          {{vm.weather.currently.apparentTemperature}}º
+        </h2>
+    <!-- <h1>  {{vm.weather.timezone}}</h1> -->
+      <p> {{vm.weather.minutely.summary}}</p>
+    </div>
+  </div>
+
+  <div class="col-sm-4 pull-right col-xs-12">
+    <div class="news">
+      <h3>Breaking News</h3>
+      <hr>
+     <div ng-repeat="n in vm.news.results">
+           <h3>{{n.webTitle}}</h3>
+           <a href="{{n.webUrl}}">{{n.sectionId}}</a>
+           <br>
+     </div>
+   </div>
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="col-sm-4">
+  <div class="stocks">
+    <h3>Stocks</h3>
+    <hr>
+  </div>
+</div>
+</div> -->
+</div>
+
+
+<!--
   <div class="weather" ng-if="vm.show">
-    <h1>Location: {{vm.weather.data.name}}</h1>
+
+    <span>
+      <img id="flag" src="http://www.geonames.org/flags/x/{{vm.countryCode | lowercase}}.gif" />
+      <h1>Location: {{vm.weather.data.name}}</h1>
+    </span>
+
     <h2>Current temperature:
       <span id="temperature">
         {{vm.weather.data.main.temp_max}}
       </span>&deg;</h2>
-
 <p>{{vm.weather.data.weather[0].description}}</p>
-
-<img src="http://openweathermap.org/img/w/03d.png" ng-if="vm.cloud" alt="">
-  </div>
+ksl: {{vm.weather.data.weather}}
+<img ng-src="http://openweathermap.org/img/w/{vm.weather.data.weather.icon}.png" alt="">
+  </div> -->
 
 
 </body>
@@ -41,6 +102,9 @@
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>
-<script src="app/app.js"></script>
+<script src="/bower_components/angular-skycons/angular-skycons.min.js"></script>
+<script src="bower_components/ngGeolocation/ngGeolocation.min.js"></script>
+<script src="app/js//app.js"></script>
+<script src="app/js/controllers/weatherController.js"></script>
 </body>
 </html>

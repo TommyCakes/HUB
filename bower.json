@@ -1,0 +1,25 @@
+{
+  "name": "HUB",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "TommyCakes <tomhwarhurst@aol.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/TommyCakes/HUB",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.15",
+    "ng-resource": "~0.0.2"
+  },
+  "devDependencies": {
+    "angular": "~1.4.8"
+  }
+}
