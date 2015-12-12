@@ -80,13 +80,14 @@ console.log('Geolocation is not supported for this Browser/OS version yet.');
       var year = today.getFullYear()
       var dayInMonth = today.getDate();
       var month = today.getMonth();
+      var apiKey = "f149183a-f055-4fc5-8863-00c29cd4e95f"
       var re = {
         callback: 'JSONP_CALLBACK'
       }
       $http({
         method: 'GET',
         // url: "http://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=" + year +"-"+ dayInMonth +"-"+ month +"&show-fields=starRating,headline,thumbnail,short-url&order-by=relevance&api-key=f149183a-f055-4fc5-8863-00c29cd4e95f",
-        url: "http://content.guardianapis.com/?api-key=test&edition=uk&show-most-viewed=true"
+        url: "http://content.guardianapis.com/?api-key="+ apiKey +"&edition=uk&show-most-viewed=true&from-date=" + year +"-"+ dayInMonth +"-"+ month +"&show-fields=starRating,headline,thumbnail,short-url",
         parmas: re
       })
       .then(function(data) {

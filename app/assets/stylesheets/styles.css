@@ -2,3 +2,51 @@ body {
   background: mintcream;
   text-align: center;
   font-family: 'Open Sans', sans-serif; }
+
+.header {
+  background: lightblue;
+  height: 60px; }
+  .header .time {
+    position: relative;
+    left: 30px; }
+  .header h3 {
+    text-align: left; }
+
+.welcome hr {
+  width: 50%; }
+
+canvas {
+  height: 100px; }
+
+input {
+  height: 30px;
+  width: 75%;
+  border-radius: 10px;
+  border-color: 1px white;
+  margin: 20px; }
+
+*:focus {
+  outline: 0; }
+
+img {
+  width: 100px;
+  margin-top: 50px; }
+
+.news img {
+  width: 100px;
+  float: left; }
+
+.stocks {
+  position: relative;
+  bottom: 600px;
+  background: lightgreen;
+  height: 700px;
+  width: 300px; }
+
+@media (max-width: 755px) {
+  .stocks {
+    position: relative;
+    bottom: 0px;
+    background: none;
+    height: 700px;
+    width: 300px; } }
