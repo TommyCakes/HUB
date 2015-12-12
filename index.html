@@ -59,6 +59,7 @@
       <hr>
       <div ng-repeat="n in vm.news.mostViewed">
             <h5>{{n.webTitle}}</h5>
+            <br>
             <a href="{{n.webUrl}}">Click to read more</a>
             <p><img ng-src="{{n.fields.thumbnail}}" alt=""></p>
             <br>
@@ -73,14 +74,19 @@
   </div>
 </div>
 
-<!-- <div class="row">
+<div class="row">
   <div class="col-sm-4">
   <div class="stocks">
     <h3>Stocks</h3>
     <hr>
+
+    <div ng-repeat="s in vm.stocks">
+      <p>{{s.name}} </p>
+      <p>{{s.data}} </p>
+    </div>
   </div>
 </div>
-</div> -->
+</div>
 </div>
 
 

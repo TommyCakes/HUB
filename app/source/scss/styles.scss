@@ -48,23 +48,34 @@ img {
 //news
 .news {
   img {
-    width:100px;
+    width:120px;
+    position:relative;
+    right:40px;
     float:left;
   }
 }
-.stocks {
-  position:relative;
-  bottom: 600px;
-  background:lightgreen;
-  height:700px;
-  width:300px;
-}
 @media(max-width:755px) {
-  .stocks {
-  position:relative;
-  bottom: 0px;
-  background:none;
-  height:700px;
-  width:300px;
- }
+  .news img {
+    width:100px;
+    position:relative;
+    right:-10px;
+    float:right;
+  }
 }
+
+// .stocks {
+//   position:relative;
+//   bottom: 600px;
+//   background:lightgreen;
+//   height:700px;
+//   width:300px;
+// }
+// @media(max-width:755px) {
+//   .stocks {
+//   position:relative;
+//   bottom: 0px;
+//   background:none;
+//   height:700px;
+//   width:300px;
+//  }
+// }

@@ -13,19 +13,7 @@ angular.module('App')
   $interval(tick, 1000);
 
   //this.getWeather = function() {
-    //alert('Weather is sunny!')
-    this.city;
-    this.cloud = false;
-    this.show = false
-
-    // check for Geolocation support
-if (navigator.geolocation) {
-console.log('Geolocation is supported!');
-}
-else {
-console.log('Geolocation is not supported for this Browser/OS version yet.');
-}
-
+  //Geolcation -Broken!
     $geolocation.watchPosition({
             timeout: 60000,
             maximumAge: 250,
@@ -33,6 +21,7 @@ console.log('Geolocation is not supported for this Browser/OS version yet.');
         });
         self.myPosition = $geolocation.position;
 
+    //Get weather
     var lat = 51.75;
     var long = -1.583
     var id = '6214db0042e9d02f80c5f3ba15803622';
@@ -52,8 +41,8 @@ console.log('Geolocation is not supported for this Browser/OS version yet.');
       self.weatherIcon = self.weather.currently.icon
       console.log(self.weatherIcon)
     })
-
-    //getCountry
+    //
+    //Get Country
       this.countryCode;
       var r = {
         callback: 'JSON_CALLBACK'
@@ -68,14 +57,9 @@ console.log('Geolocation is not supported for this Browser/OS version yet.');
           // console.log(data)
           self.lat = data.data.postalCodes[0].lat
           self.lng = data.data.postalCodes[0].lng
-          // console.log(self.lat)
-
-          // var country = data.data.geonames[0].countryName
-          // var cCode = data.data.geonames[0].countryCode
-          // if (self.city === country) {
-          //
-          // }
       })
+      //
+      //Get News
       var today = self.date;
       var year = today.getFullYear()
       var dayInMonth = today.getDate();
@@ -95,4 +79,17 @@ console.log('Geolocation is not supported for this Browser/OS version yet.');
         console.log(data.data.response)
       })
   //}
+  //Get Stocks
+  var req = {
+    callback: 'JSONP_CALLBACK'
+  }
+  $http({
+    method: 'GET',
+    url: "https://www.quandl.com/api/v3/datasets/EURONEXT/CBOT.json?auth_token=Pvfb87DjxyvahGurJ6tx",
+    params: req
+  })
+  .then(function(data) {
+    console.log(data.data)
+    self.stocks = data.data
+  })
 })
