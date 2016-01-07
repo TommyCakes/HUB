@@ -37,10 +37,3 @@ img {
   position: relative;
   right: 40px;
   float: left; }
-
-@media (max-width: 755px) {
-  .news img {
-    width: 100px;
-    position: relative;
-    right: -10px;
-    float: right; } }

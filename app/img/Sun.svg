@@ -1,0 +1,9 @@
+<svg width="153" height="153" viewBox="0 0 153 153" xmlns="http://www.w3.org/2000/svg">
+    <title>
+        Sun
+    </title>
+    <g fill="none" fill-rule="evenodd">
+        <circle stroke="#538099" stroke-width="8" cx="76.5" cy="76.5" r="31.5"/>
+        <path fill="#528099" d="M71 0h11v42H71zm0 111h11v42H71zm40-29V71h42v11zm-2.222-24.523L101 49.7 130.698 20l7.78 7.78zm-85 78L16 127.7 45.698 98l7.78 7.78zm105.92-2l7.78-7.778-29.7-29.7-7.778 7.78zm-84-77l7.78-7.778-29.7-29.7L16 26.78zM0 82V71h42v11z"/>
+    </g>
+</svg>
