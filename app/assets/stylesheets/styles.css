@@ -1,14 +1,17 @@
 body {
   background: mintcream;
   text-align: center;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Open Sans', sans-serif;
+  margin-top: -20px; }
 
 .header {
-  background: lightblue;
-  height: 60px; }
+  background: #303F9F;
+  height: 60px;
+  color: white; }
   .header .time {
     position: relative;
-    left: 30px; }
+    left: 20px;
+    top: 10px; }
   .header h3 {
     text-align: left; }
 
@@ -32,8 +35,22 @@ img {
   width: 100px;
   margin-top: 50px; }
 
-.news img {
-  width: 120px;
-  position: relative;
-  right: 40px;
+.weather-info h3 {
+  text-align: center; }
+
+.news h5 {
+  top: 50px;
+  position: relative; }
+
+.news p {
   float: left; }
+  .news p img {
+    width: 120px;
+    position: relative;
+    right: 40px;
+    float: left; }
+
+@media screen and (max-width: 650px) {
+  .news img {
+    width: 300px;
+    clear: both; } }

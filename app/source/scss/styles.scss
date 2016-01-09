@@ -4,14 +4,17 @@ body {
   background: mintcream;
   text-align:center;
   font-family: 'Open Sans', sans-serif;
+  margin-top:-20px;
 }
 
 .header {
-  background:lightblue;
+  background:#303F9F;
   height:60px;
+  color:white;
   .time {
     position: relative;
-    left:30px;
+    left:20px;
+    top:10px;
   }
   h3 {
     text-align: left;
@@ -42,26 +45,35 @@ img {
   // position: relative;
 }
 
-.weather {
-
+.weather-info {
+  h3 {
+    text-align: center;
+  }
 }
 //news
 .news {
-  img {
-    width:120px;
-    position:relative;
-    right:40px;
+  h5 {
+    top:50px;
+    position: relative;
+  }
+  p {
     float:left;
+    img {
+      width:120px;
+      position:relative;
+      right:40px;
+      float:left;
+    }
   }
 }
-// @media(max-width:755px) {
-//   .news img {
-//     width:100px;
-//     position:relative;
-//     right:-10px;
-//     float:right;
-//   }
-// }
+@media screen and (max-width:650px) {
+  .news {
+    img {
+    width:300px;
+    clear:both;
+    }
+  }
+}
 
 // .stocks {
 //   position:relative;

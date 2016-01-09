@@ -1,17 +1,14 @@
 angular.module('App')
  .controller('WeatherCtrl', function($http, $geolocation, $interval) {
   var self = this;
-
   //get date
     self.date = new Date()
-
   //ticking clock
   var tick = function() {
     self.clock =  Date.now();
   }
   tick()
   $interval(tick, 1000);
-
   //this.getWeather = function() {
   //Geolcation -Broken!
     $geolocation.watchPosition({
@@ -71,7 +68,7 @@ angular.module('App')
       $http({
         method: 'GET',
         // url: "http://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=" + year +"-"+ dayInMonth +"-"+ month +"&show-fields=starRating,headline,thumbnail,short-url&order-by=relevance&api-key=f149183a-f055-4fc5-8863-00c29cd4e95f",
-        url: "http://content.guardianapis.com/?api-key="+ apiKey +"&edition=uk&show-most-viewed=true&from-date=" + '2016' +"-"+ dayInMonth +"-"+ month +"&show-fields=starRating,headline,thumbnail,short-url",
+        url: "http://content.guardianapis.com/?api-key="+ apiKey +"&edition=uk&show-most-viewed=true&show-fields=starRating,headline,thumbnail,short-url",
         parmas: re
       })
       .then(function(data) {
