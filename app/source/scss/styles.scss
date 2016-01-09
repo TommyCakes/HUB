@@ -74,7 +74,20 @@ img {
     }
   }
 }
-
+.svg-container {
+  width:100%;
+}
+.clouds {
+  animation: scroll 8s linear infinite ;
+}
+.clouds2 {
+  animation: scroll 30s linear infinite ;
+  -webkit-transform: rotate(100deg);
+}
+@keyframes scroll {
+  0%   {transform: translateX(550px)}
+  100% {transform: translateX(-525px)}
+}
 // .stocks {
 //   position:relative;
 //   bottom: 600px;
